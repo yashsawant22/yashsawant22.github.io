@@ -1,0 +1,12 @@
+title: yash sawant
+description: writing about what I learn — training internals, post-training, building things from scratch
+url: "https://yashsawant22.github.io"
+theme: minima
+
+author:
+  name: Yash Sawant
+
+header_pages:
+  - about.md
+
+show_excerpts: true
