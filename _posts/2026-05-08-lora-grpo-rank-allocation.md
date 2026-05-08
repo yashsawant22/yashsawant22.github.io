@@ -108,4 +108,4 @@ The good news in the negative result: uniform is fine. It's also the cheapest th
 
 ---
 
-The full paper is going up on arXiv shortly (submitted under cs.CL). This work was submitted to the [CoLoRAI workshop at ICML 2026](https://grigoris.ece.wisc.edu/workshops/colorai-icml-2026/).
+The full paper is going up on arXiv shortly (submitted under cs.CL). Code is at [github.com/yashsawant22/adaptive-lora-rank-grpo](https://github.com/yashsawant22/adaptive-lora-rank-grpo). This work was submitted to the [CoLoRAI workshop at ICML 2026](https://grigoris.ece.wisc.edu/workshops/colorai-icml-2026/).
