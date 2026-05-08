@@ -108,4 +108,4 @@ The good news in the negative result: uniform is fine. It's also the cheapest th
 
 ---
 
-The full paper is going up on arXiv shortly (submitted under cs.CL). Code and gradient logs are at [github.com/yashsawant22/colorai-reward-rank](https://github.com/yashsawant22/colorai-reward-rank). This work was submitted to the [CoLoRAI workshop at ICML 2026](https://grigoris.ece.wisc.edu/workshops/colorai-icml-2026/).
+The full paper is going up on arXiv shortly (submitted under cs.CL). This work was submitted to the [CoLoRAI workshop at ICML 2026](https://grigoris.ece.wisc.edu/workshops/colorai-icml-2026/).
