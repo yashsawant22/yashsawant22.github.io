@@ -261,26 +261,39 @@ pictured) got 6/8 — the two misses were both photos of young boys in casual ou
 a believable confusion given how similar the captions read. Genuinely satisfying to watch a model
 I built from patch embeddings up get real, checkable answers right.
 
-**A hypothesis, tested live.** Looking at the overfitting onset, I noticed something about how the
-training data was being fed in: the dataset wrapper picks **one of the 5 valid captions per image,
-at random, each epoch** — meaning any single epoch only trains on 6,000 (image, caption) pairs,
-even though 30,000 exist. My hypothesis: this limits how much caption diversity the model sees
-*per epoch*, making it easier to memorize whichever specific phrasing it happened to draw rather
-than being forced to reconcile several different valid descriptions of the same image. So I added
-a `flatten_captions` option — every (image, caption) pair becomes its own row, all 5 used every
-epoch instead of 1 — and reran, same 20 epochs, same everything else, purely to see if it changes
-the story.
+**A hypothesis, tested — and a confound I didn't catch until the numbers were in.** Looking at the
+overfitting onset, I noticed something about how the training data was being fed in: the dataset
+wrapper picks **one of the 5 valid captions per image, at random, each epoch** — meaning any single
+epoch only trains on 6,000 (image, caption) pairs, even though 30,000 exist. My hypothesis: this
+limits how much caption diversity the model sees *per epoch*, making it easier to memorize
+whichever specific phrasing it happened to draw rather than being forced to reconcile several
+different valid descriptions of the same image. So I added a `flatten_captions` option — every
+(image, caption) pair becomes its own row, all 5 used every epoch instead of 1 — and reran, same 20
+epochs, same everything else.
 
-It's genuinely surprising so far, and not in the direction I expected. Early on it tracked the
-hypothesis nicely — val accuracy hit 15.4% by epoch 3 and 17.7% by epoch 6, matching and then
-beating the baseline's *best* result (15.7% at epoch 15) many epochs sooner. But by epoch 14,
-train accuracy had rocketed past 97% while val accuracy sat stuck around 16%, with val_loss
-climbing well past the baseline's worst — a much *more* dramatic train/val gap than the baseline
-ever showed, not less. The catch, which I only realized partway through: an "epoch" here has 5x
-more gradient steps than the baseline's, so comparing by epoch number isn't a fair comparison at
-all — flattened-epoch 14 represents roughly as many total gradient updates as baseline-epoch 70
-would. Whether flattening the captions actually delays overfitting *per unit of real training
-signal* is still an open question I don't have a clean answer to yet.
+Naively comparing the two runs epoch-for-epoch, the flattened run looks like a disaster: by epoch
+20 it hits 98.8% train accuracy against val accuracy stuck at 15.8%, and val_loss balloons to 5.92
+— a far uglier gap than the baseline's 38.1% / 15.2% / 3.62. My first reaction was that the
+hypothesis was just wrong. It wasn't — the comparison was.
+
+Flattening the captions gives each epoch 5x more rows (30,000 vs. 6,000), which means 5x more
+gradient steps per epoch (468 vs. 93). "20 epochs" stopped meaning the same amount of training the
+moment I changed how many rows an epoch contained — the flattened run's 20 epochs are actually
+~9,360 total gradient steps against the baseline's ~1,860. Lining the two runs up by **step count**
+instead tells a completely different story:
+
+| ~total steps | baseline (epoch) | val_acc / train_acc / val_loss | flattened (epoch) | val_acc / train_acc / val_loss |
+|---|---|---|---|---|
+| ~1,400 | 15 (best val) | 15.7% / 32.0% / 3.56 | 3 | 15.4% / 21.1% / 3.47 |
+| ~1,860 | 20 (final) | 15.2% / 38.1% / 3.62 | 4 | 15.8% / 28.2% / 3.48 |
+
+At matched step counts, the flattened run reaches **equal-or-better** validation accuracy with a
+**meaningfully smaller** train/val gap and **lower** val_loss — exactly what the original
+hypothesis predicted. The hypothesis held up; my experiment design didn't. I'd fixed *epoch count*
+to keep the comparison simple, without registering that an epoch had stopped being a consistent
+unit of measurement. The honest fix, and the actual next step, is to hold *total gradient steps*
+constant across both runs instead of epoch count — a cleaner experiment than the one I ran, not a
+settled conclusion yet.
 
 ## What I learned
 
@@ -301,7 +314,9 @@ signal* is still an open question I don't have a clean answer to yet.
   loss curve — the 8/8 real prediction grid was more convincing to me than the 15.7% val accuracy
   number by itself, same lesson as Phase 1's prediction grid.
 - Comparing two training runs by epoch count is only valid if an epoch means the same amount of
-  work in both — changing how much data each epoch sees (the flattened-captions experiment) broke
-  that assumption, and I didn't catch it until partway through watching the run.
+  work in both. The flattened-captions run trained 5x more gradient steps per epoch than the
+  baseline, so the naive epoch-for-epoch comparison made a *correct* hypothesis look wrong.
+  Re-comparing at matched step counts flipped the conclusion entirely — "total gradient steps," not
+  "epochs," is the unit I should have been comparing on from the start.
 
 Code, configs, and full results are in the [embodied-gpt repo](https://github.com/yashsawant22/embodied-gpt).
