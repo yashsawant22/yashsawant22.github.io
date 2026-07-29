@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="1" y="1" width="898" height="378" rx="16" fill="#FBFAF8" stroke="#E4E0D8"/>
+
+  <text x="450" y="48" text-anchor="middle" font-size="23" font-weight="700" fill="#23202B">Two frozen models, one small trained bridge</text>
+  <text x="450" y="77" text-anchor="middle" font-size="13.5" fill="#6F6B78">CLIP can see but can&#8217;t speak &#183; GPT-2 can speak but can&#8217;t see &#183; a single linear layer joins them</text>
+
+  <!-- CLIP box -->
+  <g>
+    <rect x="64" y="112" width="190" height="120" rx="12" fill="#EAEDF3" stroke="#A9B4C7"/>
+    <rect x="64" y="112" width="190" height="7" rx="3.5" fill="#2E9B8F"/>
+    <text x="159" y="152" text-anchor="middle" font-size="16" font-weight="700" fill="#2B3345">CLIP vision</text>
+    <text x="159" y="173" text-anchor="middle" font-size="11.5" fill="#5B6478">encodes pixels &#8594; vectors</text>
+    <rect x="118" y="192" width="82" height="22" rx="11" fill="#DCE2EC" stroke="#A9B4C7"/>
+    <!-- lock -->
+    <path d="M132 203 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#46506A" stroke-width="1.6"/>
+    <rect x="130.5" y="203" width="11" height="8.5" rx="1.5" fill="#46506A"/>
+    <text x="164" y="207" text-anchor="middle" font-size="10.5" font-weight="700" fill="#46506A" letter-spacing="0.5">FROZEN</text>
+  </g>
+
+  <!-- bridge box (trained) -->
+  <g>
+    <rect x="343" y="100" width="214" height="144" rx="14" fill="#FFD470" opacity="0.35"/>
+    <rect x="355" y="112" width="190" height="120" rx="12" fill="#FFE6A6" stroke="#EFA637" stroke-width="1.5"/>
+    <text x="450" y="150" text-anchor="middle" font-size="16" font-weight="700" fill="#6C4200">projection</text>
+    <text x="450" y="172" text-anchor="middle" font-size="12" fill="#7A4B00" font-family="'SFMono-Regular', Menlo, Consolas, monospace">nn.Linear(192, 768)</text>
+    <rect x="399" y="192" width="102" height="22" rx="11" fill="#F5A623" stroke="#D98E12"/>
+    <circle cx="416" cy="203" r="3.5" fill="#3A2600"/>
+    <text x="457" y="207" text-anchor="middle" font-size="10.5" font-weight="700" fill="#3A2600" letter-spacing="0.5">TRAINED</text>
+  </g>
+
+  <!-- GPT box -->
+  <g>
+    <rect x="646" y="112" width="190" height="120" rx="12" fill="#EAEDF3" stroke="#A9B4C7"/>
+    <rect x="646" y="112" width="190" height="7" rx="3.5" fill="#7C5CD0"/>
+    <text x="741" y="152" text-anchor="middle" font-size="16" font-weight="700" fill="#2B3345">GPT-2</text>
+    <text x="741" y="173" text-anchor="middle" font-size="11.5" fill="#5B6478">generates text tokens</text>
+    <rect x="700" y="192" width="82" height="22" rx="11" fill="#DCE2EC" stroke="#A9B4C7"/>
+    <path d="M714 203 v-3 a4 4 0 0 1 8 0 v3" fill="none" stroke="#46506A" stroke-width="1.6"/>
+    <rect x="712.5" y="203" width="11" height="8.5" rx="1.5" fill="#46506A"/>
+    <text x="746" y="207" text-anchor="middle" font-size="10.5" font-weight="700" fill="#46506A" letter-spacing="0.5">FROZEN</text>
+  </g>
+
+  <!-- arrows -->
+  <defs>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 z" fill="#9A96A2"/>
+    </marker>
+  </defs>
+  <line x1="256" y1="172" x2="341" y2="172" stroke="#9A96A2" stroke-width="2.2" marker-end="url(#ah)"/>
+  <line x1="559" y1="172" x2="644" y2="172" stroke="#9A96A2" stroke-width="2.2" marker-end="url(#ah)"/>
+
+  <!-- caption output bubble -->
+  <rect x="210" y="288" width="480" height="62" rx="14" fill="#F3F1EC" stroke="#E4E0D8"/>
+  <text x="248" y="316" font-size="12" font-weight="700" fill="#8C8796" letter-spacing="1">OUTPUT</text>
+  <text x="450" y="325" text-anchor="middle" font-size="16" font-style="italic" fill="#23202B">&#8220;A dog is running through the woods.&#8221;</text>
+</svg>

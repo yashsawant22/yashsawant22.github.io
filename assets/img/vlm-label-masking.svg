@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <rect x="1" y="1" width="878" height="428" rx="16" fill="#FBFAF8" stroke="#E4E0D8"/>
+  <defs>
+    <marker id="am" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#9A96A2"/>
+    </marker>
+    <marker id="amG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8 z" fill="#EFA637"/>
+    </marker>
+    <style>
+      .tok { font-family: 'SFMono-Regular', Menlo, Consolas, monospace; font-size: 14px; font-weight: 700; }
+      .rl  { font-size: 11px; font-weight: 700; fill: #8C8796; letter-spacing: 1px; }
+    </style>
+  </defs>
+
+  <text x="440" y="42" text-anchor="middle" font-size="19" font-weight="700" fill="#23202B">Which positions actually get a loss?</text>
+  <text x="440" y="67" text-anchor="middle" font-size="12.5" fill="#6F6B78">Each position predicts the next token &#8212; but image positions have no vocabulary target, so only the very last one does.</text>
+
+  <!-- row labels (vertical, in left margin) -->
+  <text transform="rotate(-90 26 129)" x="26" y="129" text-anchor="middle" class="rl">INPUT</text>
+  <text transform="rotate(-90 26 249)" x="26" y="249" text-anchor="middle" class="rl">TARGET</text>
+
+  <!-- INPUT ROW  centers: 90 185 280 375 470 565 660 755 -->
+  <!-- image tokens (teal) -->
+  <g>
+    <rect x="51" y="104" width="78" height="50" rx="9" fill="#E3F1EF" stroke="#7FBEB6"/><text x="90" y="135" text-anchor="middle" class="tok" fill="#1F5A52">img0</text>
+    <rect x="146" y="104" width="78" height="50" rx="9" fill="#E3F1EF" stroke="#7FBEB6"/><text x="185" y="135" text-anchor="middle" class="tok" fill="#1F5A52">img1</text>
+    <rect x="241" y="104" width="78" height="50" rx="9" fill="#E3F1EF" stroke="#7FBEB6"/><text x="280" y="135" text-anchor="middle" class="tok" fill="#1F5A52">img2</text>
+  </g>
+  <!-- caption tokens (violet) -->
+  <g>
+    <rect x="336" y="104" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="375" y="135" text-anchor="middle" class="tok" fill="#4A3D66">10</text>
+    <rect x="431" y="104" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="470" y="135" text-anchor="middle" class="tok" fill="#4A3D66">20</text>
+    <rect x="526" y="104" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="565" y="135" text-anchor="middle" class="tok" fill="#4A3D66">30</text>
+    <rect x="621" y="104" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="660" y="135" text-anchor="middle" class="tok" fill="#4A3D66">&#60;eot&#62;</text>
+  </g>
+  <!-- pad (gray dashed) -->
+  <rect x="716" y="104" width="78" height="50" rx="9" fill="#F1F1F3" stroke="#C7C7CE" stroke-dasharray="4 3"/><text x="755" y="135" text-anchor="middle" class="tok" fill="#A7A7B0">&#60;pad&#62;</text>
+
+  <!-- arrows down: input[i] -> label[i]  (label value = the NEXT token) -->
+  <line x1="90"  y1="156" x2="90"  y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+  <line x1="185" y1="156" x2="185" y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+  <line x1="280" y1="156" x2="280" y2="222" stroke="#EFA637" stroke-width="3" marker-end="url(#amG)"/>
+  <line x1="375" y1="156" x2="375" y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+  <line x1="470" y1="156" x2="470" y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+  <line x1="565" y1="156" x2="565" y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+  <line x1="660" y1="156" x2="660" y2="222" stroke="#9A96A2" stroke-width="2" marker-end="url(#am)"/>
+
+  <!-- LABEL ROW  y=224 -->
+  <!-- masked -->
+  <rect x="51" y="224" width="78" height="50" rx="9" fill="#ECECEF" stroke="#CFCFD6" stroke-dasharray="4 3"/><text x="90" y="255" text-anchor="middle" class="tok" fill="#9A9AA3" font-style="italic">-100</text>
+  <rect x="146" y="224" width="78" height="50" rx="9" fill="#ECECEF" stroke="#CFCFD6" stroke-dasharray="4 3"/><text x="185" y="255" text-anchor="middle" class="tok" fill="#9A9AA3" font-style="italic">-100</text>
+  <!-- handoff (amber) -->
+  <rect x="241" y="224" width="78" height="50" rx="9" fill="#FFE6A6" stroke="#EFA637" stroke-width="1.6"/><text x="280" y="255" text-anchor="middle" class="tok" fill="#6C4200">10</text>
+  <!-- real caption targets (violet) -->
+  <rect x="336" y="224" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="375" y="255" text-anchor="middle" class="tok" fill="#4A3D66">20</text>
+  <rect x="431" y="224" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="470" y="255" text-anchor="middle" class="tok" fill="#4A3D66">30</text>
+  <rect x="526" y="224" width="78" height="50" rx="9" fill="#EFEAFB" stroke="#B7A6E6"/><text x="565" y="255" text-anchor="middle" class="tok" fill="#4A3D66">&#60;eot&#62;</text>
+  <!-- masked -->
+  <rect x="621" y="224" width="78" height="50" rx="9" fill="#ECECEF" stroke="#CFCFD6" stroke-dasharray="4 3"/><text x="660" y="255" text-anchor="middle" class="tok" fill="#9A9AA3" font-style="italic">-100</text>
+  <!-- no target -->
+  <rect x="716" y="224" width="78" height="50" rx="9" fill="#F7F7F8" stroke="#E1E1E6" stroke-dasharray="2 3"/><text x="755" y="255" text-anchor="middle" font-size="18" fill="#C7C7CE">&#8212;</text>
+
+  <!-- handoff callout -->
+  <text x="280" y="302" text-anchor="middle" font-size="11.5" font-weight="700" fill="#B57A17">the image &#8594; text handoff</text>
+  <text x="280" y="318" text-anchor="middle" font-size="10.5" fill="#8C7A54">last image token predicts the first caption word</text>
+
+  <!-- legend -->
+  <g font-size="11.5" fill="#5B5560">
+    <rect x="120" y="372" width="16" height="16" rx="4" fill="#E3F1EF" stroke="#7FBEB6"/><text x="144" y="384">image token (no target)</text>
+    <rect x="300" y="372" width="16" height="16" rx="4" fill="#EFEAFB" stroke="#B7A6E6"/><text x="324" y="384">caption target</text>
+    <rect x="440" y="372" width="16" height="16" rx="4" fill="#FFE6A6" stroke="#EFA637"/><text x="464" y="384">the handoff</text>
+    <rect x="565" y="372" width="16" height="16" rx="4" fill="#ECECEF" stroke="#CFCFD6" stroke-dasharray="3 2"/><text x="589" y="384">-100 = ignored (zero loss)</text>
+  </g>
+</svg>
