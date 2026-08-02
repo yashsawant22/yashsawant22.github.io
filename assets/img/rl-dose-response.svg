@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <text x="70" y="30" font-size="21" font-weight="600" fill="#c9770d">Steering the pre-RL model induces reasoning</text>
+  <text x="70" y="52" font-size="13.5" fill="#8a92a1">Reasoning-rate on plain prompts vs. steering strength — controls stay flat on the floor.</text>
+
+  <!-- gridlines -->
+  <g stroke="#9aa2b1" stroke-opacity="0.32" stroke-width="1">
+    <line x1="70" y1="80" x2="690" y2="80"/>
+    <line x1="70" y1="150" x2="690" y2="150"/>
+    <line x1="70" y1="220" x2="690" y2="220"/>
+    <line x1="70" y1="290" x2="690" y2="290"/>
+  </g>
+  <line x1="70" y1="360" x2="690" y2="360" stroke="#8a92a1" stroke-width="1.2"/>
+
+  <!-- y labels -->
+  <g font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#8a92a1" text-anchor="end">
+    <text x="60" y="84">1.0</text>
+    <text x="60" y="224">0.5</text>
+    <text x="60" y="364">0</text>
+  </g>
+  <!-- x labels -->
+  <g font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#8a92a1" text-anchor="middle">
+    <text x="70" y="380">0</text>
+    <text x="276.7" y="380">10</text>
+    <text x="483.3" y="380">20</text>
+    <text x="690" y="380">30</text>
+  </g>
+  <text x="380" y="400" font-size="12.5" fill="#8a92a1" text-anchor="middle">steering strength &#8594;</text>
+
+  <!-- control + reference lines -->
+  <polyline fill="none" stroke="#9aa2b1" stroke-width="2" points="70,337.6 173.3,360 276.7,360 380,360 483.3,360 586.7,360 690,360"/>
+  <polyline fill="none" stroke="#b25478" stroke-width="2" points="70,337.6 173.3,337.6 276.7,337.6 380,360 483.3,360 586.7,360 690,360"/>
+  <polyline fill="none" stroke="#d98314" stroke-width="2" stroke-dasharray="6 5" points="70,337.6 173.3,337.6 276.7,312.4 380,197.6 483.3,220 586.7,242.4 690,360"/>
+  <!-- hero line -->
+  <polyline fill="none" stroke="#5b63d6" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round" points="70,337.6 173.3,312.4 276.7,267.6 380,220 483.3,127.6 586.7,102.4 690,102.4"/>
+  <g fill="#5b63d6">
+    <circle cx="276.7" cy="267.6" r="3.6"/>
+    <circle cx="380" cy="220" r="3.6"/>
+    <circle cx="483.3" cy="127.6" r="3.6"/>
+    <circle cx="586.7" cy="102.4" r="4.6"/>
+  </g>
+
+  <!-- legend -->
+  <g font-size="13" fill="#5c6473">
+    <rect x="70" y="424" width="13" height="13" rx="3" fill="#5b63d6"/>
+    <text x="90" y="435">RL-up-weighted reasoning set</text>
+    <rect x="300" y="424" width="13" height="13" rx="3" fill="#d98314"/>
+    <text x="320" y="435">reasoning&#8722;plain (ref)</text>
+    <rect x="490" y="424" width="13" height="13" rx="3" fill="#b25478"/>
+    <text x="510" y="435">RL-down-weighted (ctrl)</text>
+    <rect x="70" y="447" width="13" height="13" rx="3" fill="#9aa2b1"/>
+    <text x="90" y="458">random direction (ctrl)</text>
+  </g>
+</svg>

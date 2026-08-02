@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <text x="30" y="30" font-size="20" font-weight="600" fill="#c9770d">A crosscoder: one shared dictionary, two decoders</text>
+  <text x="30" y="52" font-size="13.5" fill="#8a92a1">The ratio of a feature&#8217;s two decoder norms says how much each model leans on it &#8594; who moved it.</text>
+
+  <!-- two input streams -->
+  <rect x="30" y="90" width="150" height="46" rx="8" fill="#9aa2b1" fill-opacity="0.12" stroke="#9aa2b1" stroke-opacity="0.5"/>
+  <text x="105" y="112" font-size="13" fill="#5c6473" text-anchor="middle" font-weight="600">DPO activation</text>
+  <text x="105" y="128" font-size="11" fill="#8a92a1" text-anchor="middle">pre-RL, layer 12</text>
+
+  <rect x="30" y="224" width="150" height="46" rx="8" fill="#5b63d6" fill-opacity="0.12" stroke="#5b63d6" stroke-opacity="0.5"/>
+  <text x="105" y="246" font-size="13" fill="#5b63d6" text-anchor="middle" font-weight="600">RLVR1 activation</text>
+  <text x="105" y="262" font-size="11" fill="#8a92a1" text-anchor="middle">post-RL, layer 12</text>
+
+  <!-- arrows into encoder -->
+  <line x1="180" y1="113" x2="250" y2="170" stroke="#8a92a1" stroke-width="1.6"/>
+  <line x1="180" y1="247" x2="250" y2="190" stroke="#8a92a1" stroke-width="1.6"/>
+
+  <!-- shared dictionary -->
+  <rect x="252" y="140" width="150" height="80" rx="10" fill="#c9770d" fill-opacity="0.12" stroke="#c9770d" stroke-opacity="0.6"/>
+  <text x="327" y="172" font-size="13.5" fill="#c9770d" text-anchor="middle" font-weight="600">shared features</text>
+  <text x="327" y="190" font-size="11.5" fill="#8a92a1" text-anchor="middle">f = TopK(ReLU(&#183;))</text>
+  <text x="327" y="206" font-size="11.5" fill="#8a92a1" text-anchor="middle">8,192 latents, k=64</text>
+
+  <!-- two decoders -->
+  <line x1="402" y1="165" x2="470" y2="113" stroke="#9aa2b1" stroke-width="1.6"/>
+  <line x1="402" y1="195" x2="470" y2="247" stroke="#5b63d6" stroke-width="1.6"/>
+
+  <rect x="472" y="90" width="120" height="46" rx="8" fill="none" stroke="#9aa2b1" stroke-opacity="0.6"/>
+  <text x="532" y="112" font-size="12.5" fill="#5c6473" text-anchor="middle">decoder&#8320;</text>
+  <text x="532" y="128" font-size="11" fill="#8a92a1" text-anchor="middle">&#8594; rebuild DPO</text>
+
+  <rect x="472" y="224" width="120" height="46" rx="8" fill="none" stroke="#5b63d6" stroke-opacity="0.6"/>
+  <text x="532" y="246" font-size="12.5" fill="#5b63d6" text-anchor="middle">decoder&#8321;</text>
+  <text x="532" y="262" font-size="11" fill="#8a92a1" text-anchor="middle">&#8594; rebuild RLVR1</text>
+
+  <!-- readout -->
+  <line x1="592" y1="113" x2="648" y2="170" stroke="#8a92a1" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <line x1="592" y1="247" x2="648" y2="190" stroke="#8a92a1" stroke-width="1.4" stroke-dasharray="4 4"/>
+  <rect x="650" y="142" width="90" height="76" rx="10" fill="#5b63d6" fill-opacity="0.10" stroke="#5b63d6" stroke-opacity="0.45"/>
+  <text x="695" y="168" font-size="12" fill="#5c6473" text-anchor="middle">rel-norm</text>
+  <text x="695" y="188" font-size="12" font-family="ui-monospace, Menlo, monospace" fill="#5b63d6" text-anchor="middle">&#8593; RL turned</text>
+  <text x="695" y="204" font-size="12" font-family="ui-monospace, Menlo, monospace" fill="#5b63d6" text-anchor="middle">this one up</text>
+
+  <text x="30" y="330" font-size="12.5" fill="#8a92a1">rel-norm = &#8214;dec&#8321;&#8214; / (&#8214;dec&#8320;&#8214; + &#8214;dec&#8321;&#8214;).  &#8776;0.5 = shared;  the &#8593;1 tail = features RL leans on more than DPO did.</text>
+</svg>

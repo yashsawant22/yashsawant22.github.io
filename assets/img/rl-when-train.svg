@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <text x="30" y="30" font-size="20" font-weight="600" fill="#c9770d">The same nudge, a new plain prompt</text>
+  <text x="30" y="52" font-size="13.5" fill="#8a92a1">The train story turns into a rate problem &#8212; &#8220;Let&#8217;s calculate the total number of hours.&#8221;</text>
+
+  <!-- shared prompt -->
+  <rect x="30" y="72" width="700" height="40" rx="8" fill="#9aa2b1" fill-opacity="0.12" stroke="#9aa2b1" stroke-opacity="0.4"/>
+  <text x="46" y="90" font-size="11.5" fill="#8a92a1">prompt</text>
+  <text x="46" y="106" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">The train arrived at the station a few minutes late</text>
+
+  <!-- OFF panel -->
+  <rect x="30" y="140" width="338" height="170" rx="10" fill="#9aa2b1" fill-opacity="0.10" stroke="#9aa2b1" stroke-opacity="0.45"/>
+  <circle cx="52" cy="164" r="6" fill="#9aa2b1"/>
+  <text x="66" y="168" font-size="13" font-weight="600" fill="#5c6473">steering OFF</text>
+  <text x="48" y="200" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">, and the passengers were already</text>
+  <text x="48" y="220" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">boarding the next train. The</text>
+  <text x="48" y="240" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">conductor, noticing the</text>
+  <text x="48" y="260" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">confusion, quickly addressed&#8230;</text>
+
+  <!-- arrow / knob -->
+  <text x="399" y="220" font-size="26" fill="#5b63d6" text-anchor="middle">&#8594;</text>
+  <text x="399" y="245" font-size="10.5" fill="#8a92a1" text-anchor="middle">+ RL&#8217;s</text>
+  <text x="399" y="258" font-size="10.5" fill="#8a92a1" text-anchor="middle">reasoning</text>
+  <text x="399" y="271" font-size="10.5" fill="#8a92a1" text-anchor="middle">features</text>
+
+  <!-- ON panel -->
+  <rect x="430" y="140" width="300" height="170" rx="10" fill="#5b63d6" fill-opacity="0.10" stroke="#5b63d6" stroke-opacity="0.55"/>
+  <circle cx="452" cy="164" r="6" fill="#5b63d6"/>
+  <text x="466" y="168" font-size="13" font-weight="600" fill="#5b63d6">steering ON</text>
+  <!-- reasoning-text highlight -->
+  <g fill="#5b63d6" fill-opacity="0.18">
+    <rect x="496" y="189" width="189" height="16" rx="3"/>
+    <rect x="446" y="209" width="237" height="16" rx="3"/>
+    <rect x="446" y="229" width="237" height="16" rx="3"/>
+    <rect x="446" y="249" width="50" height="16" rx="3"/>
+  </g>
+  <text x="448" y="200" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">, and the total time spent on</text>
+  <text x="448" y="220" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">the journey is 5 hours. Let's</text>
+  <text x="448" y="240" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">calculate the total number of</text>
+  <text x="448" y="260" font-size="13.5" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">hours&#8230;</text>
+</svg>
