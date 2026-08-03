@@ -1,0 +1,33 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+
+  {%- comment -%} Person entity — disambiguates a common name for search engines {%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "{{ site.url }}/#person",
+    "name": "Yash Sawant",
+    "url": "{{ site.url }}",
+    "jobTitle": "Machine Learning Engineer",
+    "worksFor": { "@type": "Organization", "name": "Wethos AI" },
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "University of California, Irvine" }
+    ],
+    "knowsAbout": ["Machine learning", "LLM post-training", "Reinforcement learning", "Mechanistic interpretability", "Sparse autoencoders"],
+    "sameAs": [
+      {%- for link in site.social.links -%}
+      {{ link | jsonify }}{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ]
+  }
+  </script>
+</head>

@@ -1,12 +1,32 @@
-title: yash sawant
-description: writing about what I learn — training internals, post-training, building things from scratch
+title: Yash Sawant
+description: ML engineer writing about training internals, post-training, and mechanistic interpretability — mostly from scratch.
 url: "https://yashsawant22.github.io"
 theme: minima
 
 author:
   name: Yash Sawant
 
+# Profiles that are the SAME Yash Sawant — jekyll-seo-tag emits these as schema.org sameAs,
+# which is how Google clusters your site + profiles into one entity (key for a common name).
+social:
+  name: Yash Sawant
+  links:
+    - https://github.com/yashsawant22
+    - https://www.linkedin.com/in/yashsawant22/
+    - https://scholar.google.com/citations?user=Or_bnyEAAAAJ&hl=en
+    - https://huggingface.co/Savianto
+
 header_pages:
   - about.md
 
 show_excerpts: true
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Google Search Console: after you add the site there, paste the verification code below
+# and uncomment — jekyll-seo-tag will emit the verification meta tag.
+# webmaster_verifications:
+#   google: YOUR_CODE_HERE
