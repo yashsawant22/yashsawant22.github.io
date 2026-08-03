@@ -2,6 +2,7 @@
 layout: post
 title: "The Sparsity Knob That Did Nothing: Training SAEs and Crosscoders From Scratch"
 date: 2026-08-02
+image: /assets/img/card-sparsity-knob.png
 ---
 
 *Part of [rl-crosscoder](https://github.com/yashsawant22/rl-crosscoder) — the training companion to

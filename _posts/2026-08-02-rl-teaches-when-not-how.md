@@ -2,6 +2,7 @@
 layout: post
 title: "RL Teaches a Model When to Reason, Not How — and You Can Steer It Back In"
 date: 2026-08-02
+image: /assets/img/card-rl-when.png
 ---
 
 *Part of [rl-reasoning-diff](https://github.com/yashsawant22/rl-reasoning-diff) — diffing a reasoning model across its RL step with a crosscoder.*
