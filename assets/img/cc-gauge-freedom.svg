@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <text x="30" y="30" font-size="20" font-weight="600" fill="#c9770d">Why the L1 knob is dead: a free rescale</text>
+  <text x="30" y="52" font-size="13.5" fill="#8a92a1">Scale a feature up and its decoder down by the same &#945; &#8212; nothing the loss can see changes.</text>
+
+  <!-- original -->
+  <rect x="30" y="80" width="200" height="70" rx="9" fill="#9aa2b1" fill-opacity="0.10" stroke="#9aa2b1" stroke-opacity="0.5"/>
+  <text x="130" y="108" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473" text-anchor="middle">activation f</text>
+  <text x="130" y="132" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473" text-anchor="middle">decoder dec</text>
+
+  <!-- arrow -->
+  <text x="270" y="120" font-size="24" fill="#b25478" text-anchor="middle">&#8594;</text>
+  <text x="270" y="142" font-size="11" fill="#8a92a1" text-anchor="middle">rescale by &#945;</text>
+
+  <!-- rescaled -->
+  <rect x="310" y="80" width="220" height="70" rx="9" fill="#b25478" fill-opacity="0.10" stroke="#b25478" stroke-opacity="0.5"/>
+  <text x="420" y="108" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473" text-anchor="middle">activation &#945;&#183;f</text>
+  <text x="420" y="132" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473" text-anchor="middle">decoder dec / &#945;</text>
+
+  <!-- consequences -->
+  <rect x="30" y="185" width="330" height="86" rx="9" fill="#5b63d6" fill-opacity="0.06" stroke="#5b63d6" stroke-opacity="0.35"/>
+  <text x="48" y="210" font-size="12.5" font-weight="600" fill="#5c6473">reconstruction</text>
+  <text x="48" y="234" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">(&#945;f)&#183;(dec/&#945;) = f&#183;dec</text>
+  <text x="48" y="258" font-size="12.5" fill="#5b63d6" font-weight="600">unchanged</text>
+
+  <rect x="380" y="185" width="330" height="86" rx="9" fill="#5b63d6" fill-opacity="0.06" stroke="#5b63d6" stroke-opacity="0.35"/>
+  <text x="398" y="210" font-size="12.5" font-weight="600" fill="#5c6473">L1 penalty (decoder-norm weighted)</text>
+  <text x="398" y="234" font-size="13" font-family="ui-monospace, Menlo, monospace" fill="#5c6473">(&#945;f)&#183;(&#8214;dec&#8214;/&#945;) = f&#183;&#8214;dec&#8214;</text>
+  <text x="398" y="258" font-size="12.5" fill="#5b63d6" font-weight="600">unchanged</text>
+
+  <text x="30" y="304" font-size="12.5" fill="#8a92a1">Both terms are invariant, so turning &#955; up never drops a feature &#8212; it just shrinks activations and grows decoders.</text>
+  <text x="30" y="322" font-size="12.5" fill="#8a92a1">TopK removes the escape hatch: selection is by magnitude, so a shrunk feature simply falls out of the top k.</text>
+</svg>
