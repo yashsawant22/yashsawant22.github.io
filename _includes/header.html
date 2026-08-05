@@ -1,0 +1,8 @@
+<header class="site-header" role="banner">
+  <nav class="wrapper site-tabs" aria-label="Primary navigation">
+    <a class="site-name" rel="author" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
+    <a class="site-tab{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Research</a>
+    <a class="site-tab{% if page.url == '/writing/' %} is-active{% endif %}" href="{{ '/writing/' | relative_url }}">Writing</a>
+    <a class="site-tab{% if page.url == '/about/' %} is-active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+  </nav>
+</header>

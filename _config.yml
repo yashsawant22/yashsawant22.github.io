@@ -1,10 +1,9 @@
 title: Yash Sawant
-description: ML engineer writing about training internals, post-training, and mechanistic interpretability — mostly from scratch.
+description: ML engineer studying LLM post-training and mechanistic interpretability.
 url: "https://yashsawant22.github.io"
 theme: minima
 
-author:
-  name: Yash Sawant
+author: Yash Sawant
 
 # Profiles that are the SAME Yash Sawant — jekyll-seo-tag emits these as schema.org sameAs,
 # which is how Google clusters your site + profiles into one entity (key for a common name).
@@ -15,9 +14,6 @@ social:
     - https://www.linkedin.com/in/yashsawant22/
     - https://scholar.google.com/citations?user=Or_bnyEAAAAJ&hl=en
     - https://huggingface.co/Savianto
-
-header_pages:
-  - about.md
 
 show_excerpts: true
 
