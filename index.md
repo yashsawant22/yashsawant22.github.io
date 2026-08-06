@@ -11,16 +11,11 @@ image: /assets/img/yash-sawant.png
 <main class="selected-work">
   <h2>Selected work</h2>
 
-  <article class="work-item work-item-featured">
-    <div class="work-copy">
-      <p class="artifact-meta">Interpretability · Research artifact</p>
-      <h3><a href="{{ '/2026/08/02/rl-teaches-when-not-how.html' | relative_url }}">RL teaches a model when to reason, not how</a></h3>
-      <p>Across OLMo-2-1B’s final RL step, the update preferentially changed reasoning features. Steering one RL-associated direction into the pre-RL model raised aggregate reasoning behavior from 8% to 92% without updating its weights.</p>
-      <p class="artifact-links"><a href="{{ '/2026/08/02/rl-teaches-when-not-how.html' | relative_url }}">Result</a> · <a href="https://github.com/yashsawant22/rl-reasoning-diff">Experiment</a> · <a href="https://github.com/yashsawant22/rl-crosscoder">Crosscoder</a> · <a href="https://huggingface.co/Savianto">Models</a></p>
-    </div>
-    <a class="work-thumbnail" href="{{ '/2026/08/02/rl-teaches-when-not-how.html' | relative_url }}" aria-label="Read RL teaches a model when to reason, not how">
-      <img src="{{ '/assets/img/home-causal-steering.svg' | relative_url }}" alt="Reasoning behavior rises from 8 percent to 92 percent after causal steering.">
-    </a>
+  <article class="work-item">
+    <p class="artifact-meta">Interpretability · Research artifact</p>
+    <h3><a href="{{ '/2026/08/02/rl-teaches-when-not-how.html' | relative_url }}">RL teaches a model when to reason, not how</a></h3>
+    <p>Across OLMo-2-1B’s final RL step, the update preferentially changed reasoning features. Steering one RL-associated direction into the pre-RL model raised aggregate reasoning behavior from 8% to 92% without updating its weights.</p>
+    <p class="artifact-links"><a href="{{ '/2026/08/02/rl-teaches-when-not-how.html' | relative_url }}">Result</a> · <a href="https://github.com/yashsawant22/rl-reasoning-diff">Experiment</a> · <a href="https://github.com/yashsawant22/rl-crosscoder">Crosscoder</a> · <a href="https://huggingface.co/Savianto">Models</a></p>
   </article>
 
   <article class="work-item">

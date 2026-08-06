@@ -9,7 +9,7 @@ image: /assets/img/yash-sawant.png
 <article class="about-note">
   <header class="about-lead">
     <div>
-      <h1>I’m Yash.</h1>
+      <h1>Hi, I’m Yash.</h1>
       <p>I build and study language models. At Wethos AI, I work on post-training, personalization, and models with persistent memory.</p>
     </div>
   </header>
@@ -21,6 +21,6 @@ image: /assets/img/yash-sawant.png
 
     <p>I came to this through applied machine learning. Before Wethos, I built language-model systems at BNY Mellon and JerseySTEM. I studied data science at UC Irvine and NMIMS University.</p>
 
-    <p class="about-resume"><a href="{{ '/assets/resume/Yash-Sawant-Resume.pdf' | relative_url }}">Résumé&nbsp;↗</a></p>
+    <p class="about-resume"><a href="{{ '/assets/resume/Yash-Sawant-Resume.pdf' | relative_url }}">Resume</a></p>
   </div>
 </article>

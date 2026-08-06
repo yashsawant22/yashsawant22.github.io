@@ -84,8 +84,7 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 
 .selected-work > h2,
 .artifact-meta,
-.artifact-links,
-.work-thumbnail {
+.artifact-links {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 .selected-work > h2 {
@@ -101,18 +100,11 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   padding: 28px 0 31px;
 }
 .work-item:last-child { border-bottom: 1px solid var(--faint); }
-.work-item > p,
-.work-copy > p {
+.work-item > p {
   color: var(--muted);
   font-size: 15px;
   line-height: 1.65;
   margin: 0;
-}
-.work-item-featured {
-  align-items: start;
-  display: grid;
-  gap: 30px;
-  grid-template-columns: minmax(0, 1fr) 190px;
 }
 .artifact-meta {
   font-size: 10px !important;
@@ -127,16 +119,6 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   margin: 6px 0 6px;
 }
 .artifact-links { font-size: 12px !important; margin-top: 9px !important; }
-.work-thumbnail {
-  display: block;
-  margin-top: 18px;
-  text-decoration: none;
-}
-.work-thumbnail img {
-  display: block;
-  height: auto;
-  width: 100%;
-}
 
 .writing-group h2 {
   color: var(--muted);
@@ -232,8 +214,6 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   .research-intro h1,
   .page-intro h1,
   .about-lead h1 { font-size: 27px; }
-  .work-item-featured { gap: 12px; grid-template-columns: 1fr; }
-  .work-thumbnail { margin-top: 0; max-width: 240px; }
   .writing-list li { gap: 6px; grid-template-columns: 1fr; }
   .writing-list time { padding-top: 0; }
   .about-note { padding: 48px 0 64px; }
