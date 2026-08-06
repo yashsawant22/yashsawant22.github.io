@@ -60,16 +60,19 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 
 .page-content { padding: 0; }
 
-.research-intro {
+.research-intro,
+.page-intro {
   max-width: 650px;
   padding: 72px 0 58px;
 }
-.research-intro h1 {
+.research-intro h1,
+.page-intro h1,
+.about-lead h1 {
   font-size: 34px;
   font-weight: 400;
-  letter-spacing: -.025em;
-  line-height: 1.22;
-  margin: 0 0 18px;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin: 0 0 14px;
 }
 .research-intro > p:last-child {
   color: var(--muted);
@@ -138,10 +141,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 .writing-group h2 {
   color: var(--muted);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 650;
   letter-spacing: .07em;
-  margin: 0 0 25px;
+  margin: 0 0 12px;
   text-transform: uppercase;
 }
 
@@ -153,8 +156,6 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   padding-top: 5px;
 }
 
-.page-intro { padding: 88px 0 62px; }
-.page-intro h1,
 .post-header .post-title {
   font-size: 34px;
   font-weight: 400;
@@ -163,7 +164,7 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   margin: 0 0 12px;
 }
 
-.page-intro p { color: var(--muted); font-size: 18px; margin: 0; }
+.page-intro p { color: var(--muted); font-size: 17px; line-height: 1.58; margin: 0; }
 .writing-group { margin-bottom: 58px; }
 .writing-list li {
   border-top: 1px solid var(--faint);
@@ -177,17 +178,10 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
 .writing-list p { color: var(--muted); font-size: 14px; line-height: 1.5; margin: 5px 0 0; }
 .rss-subscribe { color: var(--muted); font-size: 14px; margin: -12px 0 70px; }
 
-.about-note { padding: 68px 0 76px; }
+.about-note { padding: 72px 0 76px; }
 .about-lead {
   margin-bottom: 36px;
   max-width: 650px;
-}
-.about-lead h1 {
-  font-size: 28px;
-  font-weight: 400;
-  letter-spacing: -.015em;
-  line-height: 1.2;
-  margin: 0 0 14px;
 }
 .about-lead p {
   color: var(--ink);
@@ -233,19 +227,22 @@ a:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
   .site-tabs { gap: 15px; overflow-x: auto; }
   .site-name { margin-right: 8px; white-space: nowrap; }
   .site-tab { white-space: nowrap; }
-  .research-intro { padding: 48px 0 40px; }
-  .research-intro h1 { font-size: 27px; }
+  .research-intro,
+  .page-intro { padding: 48px 0 40px; }
+  .research-intro h1,
+  .page-intro h1,
+  .about-lead h1 { font-size: 27px; }
   .work-item-featured { gap: 12px; grid-template-columns: 1fr; }
   .work-thumbnail { margin-top: 0; max-width: 240px; }
   .writing-list li { gap: 6px; grid-template-columns: 1fr; }
   .writing-list time { padding-top: 0; }
-  .page-intro { padding: 64px 0 48px; }
   .about-note { padding: 48px 0 64px; }
   .about-lead { margin-bottom: 30px; }
-  .about-lead h1 { font-size: 26px; }
   .footer-inner { align-items: flex-start; flex-direction: column; gap: 10px; }
 }
 
 @media screen and (max-width: 430px) {
-  .research-intro h1 { font-size: 26px; }
+  .research-intro h1,
+  .page-intro h1,
+  .about-lead h1 { font-size: 26px; }
 }
